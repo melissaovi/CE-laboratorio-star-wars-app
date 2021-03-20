@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id "org.sonarqube" version "3.1.1"
 }
 
 group 'org.example'
@@ -33,4 +34,12 @@ application {
 
 test {
     useJUnitPlatform()
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "IsaacSNK_gradle-tutorial"
+    property "sonar.organization", "linear-data-structures"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
